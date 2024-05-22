@@ -47,6 +47,8 @@
             perimeter = triangle.perimeter();
             Console.WriteLine("perimeter of triangle is : {0:F}", perimeter);
 
+            Console.Read();
+
         }
     }
 }
