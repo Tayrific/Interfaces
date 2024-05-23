@@ -6,19 +6,21 @@ using System.Threading.Tasks;
 
 namespace Interfaces
 {
-    internal class Triangle : iShape
+    internal class Triangle : IShape
     {
-        public double height { get; set; }
-        public double length {get; set; }
+        public double SideA { get; set; }
+        public double SideB { get; set; }
+        public double SideC { get; set; }
 
         public double Area()
         {
-            return 0.5 * height * length;
+            double s = (SideA + SideB + SideC) / 2;
+            return Math.Sqrt(s * (s - SideA) * (s - SideB) * (s - SideC));
         }
 
         public double perimeter()
         {
-            return (3*length);
+            return SideA + SideB + SideC;
         }
     }
 }

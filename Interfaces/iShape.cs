@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Interfaces
 {
-    internal interface iShape
+    internal interface IShape
     {
         double Area();
         double perimeter();

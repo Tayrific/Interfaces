@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace Interfaces
 {
-    internal class Rectangle : iShape
+    internal class Rectangle : IShape
     {
-        public double height {  get; set; }
-        public double width { get; set; }
+        public double Height {  get; set; }
+        public double Width { get; set; }
 
         public double Area()
         {
-            return height * width;
+            return Height * Width;
         }
 
         public double perimeter()
         {
-            return (2 * height) + (2 * width);
+            return (2 * Height) + (2 * Width);
         }
     }
 }
