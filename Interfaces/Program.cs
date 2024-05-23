@@ -18,7 +18,9 @@
             Console.WriteLine("1. Rectangle");
             Console.WriteLine("2. Circle");
             Console.WriteLine("3. Triangle");
+            Console.WriteLine("4. Square");
             Console.WriteLine("---------------");
+            Console.WriteLine(" ");
 
             string choice = Console.ReadLine();
 
@@ -57,6 +59,18 @@
                     Console.WriteLine("perimeter of triangle is : {0:F}", perimeter);
                     break;
 
+                case "4":
+                case "Square":
+                    IShape Square = CreateSquare();
+
+                    area = Square.Area();
+                    Console.WriteLine("Area of Square is : {0:F}", area);
+
+                    perimeter = Square.perimeter();
+                    Console.WriteLine("Perimeter of Square is : {0:F}", perimeter);
+                    break;
+
+
                 default:
                     Console.WriteLine(" ");
                     Console.WriteLine("-- Invalid choice --");
@@ -69,10 +83,10 @@
 
         static Rectangle CreateRectangle()
         {
-            Console.WriteLine("Enter the width:");
+            Console.WriteLine("Enter the width: ");
             double width = Convert.ToDouble(Console.ReadLine());
 
-            Console.WriteLine("Enter the heighte:");
+            Console.WriteLine("Enter the heighte: ");
             double height = Convert.ToDouble(Console.ReadLine());
 
             return new Rectangle { Width = width, Height = height };
@@ -80,7 +94,7 @@
 
         static Circle CreateCircle()
         {
-            Console.WriteLine("Enter the radius:");
+            Console.WriteLine("Enter the radius: ");
             double radius = Convert.ToDouble(Console.ReadLine());
 
             return new Circle { Radius = radius };
@@ -88,17 +102,24 @@
 
         static Triangle CreateTriangle()
         {
-            Console.WriteLine("Enter the length of side A:");
+            Console.WriteLine("Enter the length of side A: ");
             double sideA = Convert.ToDouble(Console.ReadLine());
 
-            Console.WriteLine("Enter the length of side B:");
+            Console.WriteLine("Enter the length of side B: ");
             double sideB = Convert.ToDouble(Console.ReadLine());
 
-            Console.WriteLine("Enter the length of side C:");
+            Console.WriteLine("Enter the length of side C: ");
             double sideC = Convert.ToDouble(Console.ReadLine());
 
             return new Triangle { SideA = sideA, SideB = sideB, SideC = sideC };
         }
-    }
 
+        static Square CreateSquare()
+        {
+            Console.WriteLine("Enter one side length: ");
+            double side = Convert.ToDouble(Console.ReadLine());
+
+            return new Square { Side = side };
+        }
+    }
 }
