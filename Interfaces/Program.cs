@@ -28,7 +28,7 @@
             {
                 case "1":
                 case "Rectangle":
-                    IShape rec = CreateRectangle();
+                    Rectangle rec = CreateRectangle();
 
                     area = rec.Area();
                     Console.WriteLine("Area of Rectangle is : {0:F}", area);
@@ -39,7 +39,7 @@
 
                 case "2":
                 case "Circle":
-                    IShape circle = CreateCircle();
+                    Circle circle = CreateCircle();
 
                     area = circle.Area();
                     Console.WriteLine("Area of Circle is : {0:F}", area);
@@ -50,18 +50,34 @@
 
                 case "3":
                 case "Triangle":
-                    IShape triangle = CreateTriangle();
+     
+                    Triangle triangle;
+                
+                    do
+                    {
+                        triangle = CreateTriangle();
+                        area = triangle.Area();
 
-                    area = triangle.Area();
+                        if (double.IsNaN(area))
+                        {
+                            Console.WriteLine("---------------------------------------------");
+                            Console.WriteLine("-- Invalid side lengths!! Please try again --");
+                            Console.WriteLine("---------------------------------------------");
+                            Console.WriteLine(" ");
+                        }
+                    } while (double.IsNaN(area));
+
                     Console.WriteLine("Area of triangle is : {0:F}", area);
 
                     perimeter = triangle.perimeter();
-                    Console.WriteLine("perimeter of triangle is : {0:F}", perimeter);
+                    Console.WriteLine("Perimeter of triangle is : {0:F}", perimeter);
                     break;
+
+
 
                 case "4":
                 case "Square":
-                    IShape Square = CreateSquare();
+                    Square Square = CreateSquare();
 
                     area = Square.Area();
                     Console.WriteLine("Area of Square is : {0:F}", area);
